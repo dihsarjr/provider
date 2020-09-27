@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider_app/settings.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,7 +12,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
-        actions: [IconButton(icon: Icon(Icons.settings), onPressed: () {})],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (ctx) => Settings()));
+              })
+        ],
       ),
     );
   }
